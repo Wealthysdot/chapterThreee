@@ -39,7 +39,7 @@ public class HeartRatesUpdated {
     }
 
     public void setDayOfBirth(int day) {
-        if (day < 0) {
+        if (day < 0 || day > 31) {
             isNegativeValueEntered = true;
         } else {
             this.day = day;
@@ -53,8 +53,9 @@ public class HeartRatesUpdated {
 
     public void setMonthOfBirth(int month) {
 
-        if (month < 0) {
+        if (month < 0 || month > 12) {
             isNegativeValueEntered = true;
+
         } else {
             this.month = month;
         }
@@ -67,7 +68,7 @@ public class HeartRatesUpdated {
     }
 
     public void setYearOfBirth(int year) {
-        if (day < 0) {
+        if ( year < 1800) {
             isNegativeValueEntered = true;
         } else {
             this.year = year;
@@ -80,28 +81,19 @@ public class HeartRatesUpdated {
         return date;
 
     }
-
     public boolean isNegativeValueEntered() {
         return isNegativeValueEntered;
     }
-
-
     public String getInputErrorMessage() {
         String messageToReturn = "";
         if (isNegativeValueEntered) {
-            messageToReturn = "Please enter a positive number";
+            messageToReturn = "Invalid input";
         }
         return messageToReturn;
 
     }
 
-    public void setMonth(int newMonth) {
-        if(newMonth > 0 && newMonth < 13){
-            this.month = newMonth;}
-        else {
-            System.out.println("Invalid Month of Birth");
-        }
-    }
+
 }
 
 

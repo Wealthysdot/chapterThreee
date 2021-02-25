@@ -1,0 +1,10 @@
+innovation, creativity and programming
+
+synthax
+algorithm
+data structure
+patterns
+variables
+control stats
+loops
+functions
