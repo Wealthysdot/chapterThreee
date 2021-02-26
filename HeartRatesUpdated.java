@@ -1,6 +1,9 @@
 package chapterThree;
 
+import java.time.LocalDate;
+
 public class HeartRatesUpdated {
+
     private String firstName;
     private String lastName;
     private int day;
@@ -8,12 +11,16 @@ public class HeartRatesUpdated {
     private int year;
     private boolean isNegativeValueEntered;
 
+
+
     public HeartRatesUpdated(String firstName, String lastName, int day, int month, int year) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.day = day;
         this.month = month;
         this.year = year;
+
+
     }
 
     public String getFirstName() {
@@ -76,7 +83,7 @@ public class HeartRatesUpdated {
     }
 
 
-    public String toString() {
+    public String getDateOfBirth() {
         String date = year + "/" + month + "/" + day;
         return date;
 
@@ -93,7 +100,22 @@ public class HeartRatesUpdated {
 
     }
 
+//using import java.time.LocalDate; to get present year
+    public int getAge() {
+        int age = LocalDate.now().getYear() - getYearOfBirth();
+        return age;
+    }
 
+    public double calcMaxHeartRate() {
+        return 220 - (getAge());
+    }
+    public double calcLowerBoundHeartRate() {
+        return (50 * calcMaxHeartRate()) /100;
+    }
+
+    public double calcUpperBoundHeartRate() {
+        return (80 * calcMaxHeartRate())/100;
+    }
 }
 
 
